@@ -1,0 +1,6 @@
+public interface QuanLy <T>{
+    void add(T t);
+    void edit(int id,T t);
+    int find(int id);
+    void display();
+}
