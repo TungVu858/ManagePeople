@@ -26,11 +26,33 @@ public class QuanLySinhVien implements QuanLy<Student> {
     }
 
     @Override
-    public void display() {
+    public void displayAll() {
+        boolean check = false;
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
+            check = true;
+        }
+        if (!check){
+            System.out.println("Chưa có sinh viên nào ");
         }
         System.out.println("-----------------------");
+    }
+
+    public void display(int id) {
+        boolean check = false;
+        String str = " ";
+        for (int i = 0; i < list.size(); i++) {
+            if (id == list.get(i).getId()) {
+              str+= list.get(i);
+                check = true;
+            }
+        }
+        if (!check){
+            System.out.println("Không tìm thấy ID sinh viên ");
+        } else {
+            System.out.println("Thông tin sinh viên tìm được : ");
+            System.out.println(str);
+        }
     }
 
 }
