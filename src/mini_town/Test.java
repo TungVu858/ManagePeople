@@ -1,9 +1,6 @@
 package mini_town;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -50,7 +47,7 @@ public class Test {
         familyList1.findNamePerson("tùng");
         familyList.findAgeMin();
         town.findMemberMax();
-        Comparator comparator = new Town();
-        Arrays.sort(town,comparator);
+        town.sortByMember();
+        town.displayAll();
     }
 }

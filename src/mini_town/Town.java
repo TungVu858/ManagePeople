@@ -1,10 +1,8 @@
 package mini_town;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
-public class Town implements Comparator<Family> {
+public class Town {
     List<Family> townList = new ArrayList<>();
 
     public void add(Family family) {
@@ -49,15 +47,18 @@ public class Town implements Comparator<Family> {
     public void edit(String adress, Family family) {
         townList.set(find(adress), family);
     }
-
-    @Override
-    public int compare(Family o1, Family o2) {
-        if (o1.getMember() > o2.getMember()){
-            return 1;
-        }
-        else if (o1.getMember() < o2.getMember()){
-            return -1;
-        }
-        return 0;
+    public void sortByMember(){
+        Collections.sort(townList);
     }
+
+//    @Override
+//    public int compare(Family o1, Family o2) {
+//        if (o1.getMember() > o2.getMember()){
+//            return 1;
+//        }
+//        else if (o1.getMember() < o2.getMember()){
+//            return -1;
+//        }
+//        return 0;
+//    }
 }

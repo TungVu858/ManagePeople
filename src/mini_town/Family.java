@@ -3,7 +3,7 @@ package mini_town;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Family  {
+public class Family implements Comparable<Family>{
     List<Person> personList = new ArrayList<>();
     private String adress;
     private int member = 0;
@@ -94,5 +94,10 @@ public class Family  {
             System.out.println("Chưa có hộ gia đình !");
             System.out.println("-----------------------------");
         }
+    }
+
+    @Override
+    public int compareTo(Family o) {
+        return this.getMember() - o.getMember();
     }
 }
