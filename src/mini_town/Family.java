@@ -59,6 +59,7 @@ public class Family extends Person {
     }
     public void dissplayAll(){
         boolean check = false;
+        System.out.println("Thành viên của hộ gia đình : ");
         for (int i = 0; i < personList.size(); i++) {
             System.out.println(personList.get(i));
             check = true;
@@ -66,9 +67,11 @@ public class Family extends Person {
         if (check){
             System.out.println("Địa chỉ : " + getAdress());
             System.out.println("Số thành viên : " + member);
+            System.out.println("----------------------------");
         }
         else {
-            System.out.println("Chưa có hộ gia đình ");
+            System.out.println("Chưa có hộ gia đình !");
+            System.out.println("-----------------------------");
         }
     }
 }

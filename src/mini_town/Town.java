@@ -12,8 +12,15 @@ public class Town {
         townList.remove(family);
     }
     public void displayAll(){
+        boolean check = false;
+        System.out.println("Hộ gia đình : ");
         for (int i = 0; i < townList.size(); i++) {
-            System.out.println(townList.get(i));
+            townList.get(i).dissplayAll();
+            check = true;
+        }
+        if (!check){
+            System.out.println("Chưa có hộ gia đình");
+            System.out.println("-----------------------");
         }
     }
 }

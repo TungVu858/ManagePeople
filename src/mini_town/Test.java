@@ -19,6 +19,9 @@ public class Test {
         familyList.dissplayAll();
         familyList.delete("3");
         familyList.dissplayAll();
-
+        town.add(familyList);
+        town.displayAll();
+        town.delete(familyList);
+        town.displayAll();
     }
 }
