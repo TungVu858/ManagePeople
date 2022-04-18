@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class QuanLySinhVien implements QuanLy<Student> {
-    ArrayList<Student> list = new ArrayList();
+    ArrayList<Student> list = new ArrayList<>();
 
     @Override
     public void add(Student student) {
@@ -28,8 +28,8 @@ public class QuanLySinhVien implements QuanLy<Student> {
     @Override
     public void displayAll() {
         boolean check = false;
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+        for (Student student : list) {
+            System.out.println(student);
             check = true;
         }
         if (!check){
@@ -41,9 +41,9 @@ public class QuanLySinhVien implements QuanLy<Student> {
     public void display(int id) {
         boolean check = false;
         String str = " ";
-        for (int i = 0; i < list.size(); i++) {
-            if (id == list.get(i).getId()) {
-              str+= list.get(i);
+        for (Student student : list) {
+            if (id == student.getId()) {
+                str += student;
                 check = true;
             }
         }

@@ -15,11 +15,20 @@ public class QuanLyUser{
         }
         return -1;
     }
-    public String display(String username){
-        String str = " ";
+    public String display(String username,String userpass){
+        String str = "username : ";
         for (User user : arrayList) {
-            if (username.equals(user.getUsername())) str += user;
+            if (username.equals(user.getUsername())&&userpass.equals(user.getUserpass())) str += user.getUsername();
         }
         return str;
+    }
+    public void displayInfor(String username,String userpass){
+        for (User user : arrayList) {
+            if (username.equals(user.getUsername())&&userpass.equals(user.getUserpass())) System.out.println(user);;
+        }
+    }
+    public void edit(String name,String pass, User user) {
+        int index = find(name, pass);
+        arrayList.set(index, user);
     }
 }

@@ -25,10 +25,11 @@ public class User {
         this.userpass = userpass;
     }
 
-
     @Override
     public String toString() {
-        return "username='" + username + '\'';
-
+        return "User{" +
+                "username='" + username + '\'' +
+                ", userpass='" + userpass + '\'' +
+                '}';
     }
 }
