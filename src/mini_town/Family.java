@@ -3,7 +3,7 @@ package mini_town;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Family extends Person {
+public class Family  {
     List<Person> personList = new ArrayList<>();
     private String adress;
     private int member = 0;
@@ -11,8 +11,7 @@ public class Family extends Person {
     public Family() {
     }
 
-    public Family(String name, int age, String id, String job, String adress, int member) {
-        super(name, age, id, job);
+    public Family( String adress, int member) {
         this.adress = adress;
         this.member = member;
     }
@@ -50,7 +49,29 @@ public class Family extends Person {
     public void edit(String id, Person person) {
         personList.set(find(id), person);
     }
-
+    public void findNamePerson(String name){
+        boolean check = false;
+        for (int i = 0; i < personList.size(); i++) {
+            if (name.equals(personList.get(i).getName())) {
+                System.out.println("Tìm thấy : "+personList.get(i).getName() + " ,Có địa chỉ : "+ getAdress());
+                check = true;
+            }
+        }
+        if (!check){
+            System.out.println("Không tìm thấy");
+        }
+    }
+    public void findAgeMin(){
+        int min = personList.get(0).getAge();
+        String str = " ";
+        for (int i = 1; i < personList.size(); i++) {
+            if (min > personList.get(i).getAge()){
+                 min =  personList.get(i).getAge();
+                 str = personList.get(i).getName();
+            }
+        }
+        System.out.println("Tên : " + str + " ,Tuổi nhỏ nhất : " + min);
+    }
     public void delete(String id) {
         System.out.println("Bạn đã xóa "+personList.get(find(id)).getName());
         personList.remove(find(id));
