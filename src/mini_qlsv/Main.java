@@ -1,3 +1,5 @@
+package mini_qlsv;
+
 import java.util.Scanner;
 
 public class Main {

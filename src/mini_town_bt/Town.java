@@ -1,4 +1,4 @@
-package mini_town;
+package mini_town_bt;
 
 import java.util.*;
 
@@ -16,8 +16,8 @@ public class Town {
     public void displayAll() {
         boolean check = false;
         System.out.println("Hộ gia đình : ");
-        for (int i = 0; i < townList.size(); i++) {
-            townList.get(i).dissplayAll();
+        for (Family family : townList) {
+            family.dissplayAll();
             check = true;
         }
         if (!check) {
@@ -36,29 +36,21 @@ public class Town {
 
     public void findMemberMax() {
         int max = 0;
-        for (int i = 0; i < townList.size(); i++) {
-            if (max < townList.get(i).getMember()) {
-                max = townList.get(i).getMember();
+        for (Family family : townList) {
+            if (max < family.getMember()) {
+                max = family.getMember();
             }
         }
         System.out.println("Hộ gia đình có thành viên nhiều nhất là : " + max);
     }
 
     public void edit(String adress, Family family) {
+        if (find(adress)!=-1)
         townList.set(find(adress), family);
-    }
-    public void sortByMember(){
-        Collections.sort(townList);
+        else System.out.println("Không tìm thấy ");
     }
 
-//    @Override
-//    public int compare(Family o1, Family o2) {
-//        if (o1.getMember() > o2.getMember()){
-//            return 1;
-//        }
-//        else if (o1.getMember() < o2.getMember()){
-//            return -1;
-//        }
-//        return 0;
-//    }
+    public void sortByMember() {
+        Collections.sort(townList);
+    }
 }

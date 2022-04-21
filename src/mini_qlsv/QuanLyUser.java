@@ -1,10 +1,12 @@
+package mini_qlsv;
+
 import java.util.ArrayList;
 
 public class QuanLyUser{
     ArrayList<User> arrayList = new ArrayList<>();
     public void add(User user) {
-        arrayList.add(user);
-        System.out.println("Bạn đã đăng kí thành công ");
+            arrayList.add(user);
+            System.out.println("Bạn đã đăng kí thành công ");
     }
 
     public int find(String username,String userpass) {

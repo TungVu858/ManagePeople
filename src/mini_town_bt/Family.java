@@ -1,9 +1,9 @@
-package mini_town;
+package mini_town_bt;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Family implements Comparable<Family>{
+public class Family implements Comparable<Family> {
     List<Person> personList = new ArrayList<>();
     private String adress;
     private int member = 0;
@@ -11,9 +11,8 @@ public class Family implements Comparable<Family>{
     public Family() {
     }
 
-    public Family( String adress, int member) {
+    public Family(String adress) {
         this.adress = adress;
-        this.member = member;
     }
 
     public String getAdress() {
@@ -47,50 +46,60 @@ public class Family implements Comparable<Family>{
     }
 
     public void edit(String id, Person person) {
-        personList.set(find(id), person);
+            personList.set(find(id), person);
     }
-    public void findNamePerson(String name){
+
+    public void findNamePerson(String name) {
         boolean check = false;
-        for (int i = 0; i < personList.size(); i++) {
-            if (name.equals(personList.get(i).getName())) {
-                System.out.println("Tìm thấy : "+personList.get(i).getName() + " ,Có địa chỉ : "+ getAdress());
+        for (Person person : personList) {
+            if (name.equals(person.getName())) {
+                System.out.println(person);
                 check = true;
             }
         }
-        if (!check){
+        if (!check) {
             System.out.println("Không tìm thấy");
         }
     }
-    public void findAgeMin(){
-        int min = personList.get(0).getAge();
-        String str = " ";
-        for (int i = 1; i < personList.size(); i++) {
-            if (min > personList.get(i).getAge()){
-                 min =  personList.get(i).getAge();
-                 str = personList.get(i).getName();
+
+    public void findAgeMin() {
+        if (personList.size() >0) {
+            int min = personList.get(0).getAge();
+            for (Person value : personList) {
+                if (min > value.getAge()) {
+                    min = value.getAge();
+                }
             }
-        }
-        System.out.println("Tên : " + str + " ,Tuổi nhỏ nhất : " + min);
+            for (Person person : personList
+            ) {
+                if (min == person.getAge()) {
+                    System.out.println("Thành viên nhỏ tuổi nhất là : " + person);
+                }
+            }
+        }else System.out.println("Chưa có thành viên nào ");
     }
+
     public void delete(String id) {
-        System.out.println("Bạn đã xóa "+personList.get(find(id)).getName());
-        personList.remove(find(id));
-        member--;
+        if (find(id) != -1) {
+            System.out.println("Bạn đã xóa " + personList.get(find(id)).getName());
+            personList.remove(find(id));
+            member--;
+        } else System.out.println("Không tìm thấy ");
 
     }
-    public void dissplayAll(){
+
+    public void dissplayAll() {
         boolean check = false;
         System.out.println("Thành viên của hộ gia đình : ");
-        for (int i = 0; i < personList.size(); i++) {
-            System.out.println(personList.get(i));
+        System.out.println("Địa chỉ : " + adress);
+        System.out.println("Số thành viên : " + member);
+        for (Person person : personList) {
+            System.out.println(person);
             check = true;
         }
-        if (check){
-            System.out.println("Địa chỉ : " + getAdress());
-            System.out.println("Số thành viên : " + member);
+        if (check) {
             System.out.println("----------------------------");
-        }
-        else {
+        } else {
             System.out.println("Chưa có hộ gia đình !");
             System.out.println("-----------------------------");
         }

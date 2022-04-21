@@ -1,3 +1,5 @@
+package mini_qlsv;
+
 public class User {
     private String username;
     private String userpass;
@@ -27,7 +29,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "mini_qlsv.User{" +
                 "username='" + username + '\'' +
                 ", userpass='" + userpass + '\'' +
                 '}';

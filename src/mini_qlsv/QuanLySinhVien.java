@@ -1,6 +1,6 @@
-import java.awt.*;
+package mini_qlsv;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class QuanLySinhVien implements QuanLy<Student> {
     ArrayList<Student> list = new ArrayList<>();

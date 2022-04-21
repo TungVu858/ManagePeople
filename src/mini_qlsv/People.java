@@ -1,3 +1,5 @@
+package mini_qlsv;
+
 public abstract class People {
     private int id;
     private String name;

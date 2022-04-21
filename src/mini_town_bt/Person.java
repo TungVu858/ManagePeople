@@ -1,4 +1,4 @@
-package mini_town;
+package mini_town_bt;
 
 public class Person {
     private String name;
@@ -50,7 +50,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "People{" +
+        return "mini_qlsv.People{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", id=" + id +

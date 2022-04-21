@@ -1,3 +1,5 @@
+package mini_qlsv;
+
 public class Student extends People {
     private double point;
 
@@ -19,7 +21,7 @@ public class Student extends People {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "mini_qlsv.Student{" +
                 "Id = " + getId() +
                 " Name = " + getName() +
                 " Age = " + getAge() +
