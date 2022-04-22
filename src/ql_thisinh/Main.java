@@ -118,7 +118,7 @@ public class Main {
                                     break;
                             }
                         }
-                    }
+                    } else System.out.println("Bạn nhập sai tk hoặc mk !");
                     break;
                 case 2:
                     int choice_3 = -1;
