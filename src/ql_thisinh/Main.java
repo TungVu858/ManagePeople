@@ -152,7 +152,7 @@ public class Main {
         try {
             choice = scs.nextInt();
         } catch (Exception e) {
-            System.out.println(ANSI_RED + "Chỉ được nhập số " + ANSI_RESET);
+            System.out.println(ANSI_RED + "Chỉ được nhập số !!!!" + ANSI_RESET);
             scs.nextLine();
             choice = -1;
         }
@@ -160,16 +160,16 @@ public class Main {
     }
 
     private static int checkExceptionNumber(String message) {
-        boolean check = false;
-        int choice = 0 ;
+        int choice = -1 ;
         Scanner scs = new Scanner(System.in);
+        boolean check = false;
         while (!check) {
             try {
                 System.out.println(message);
                 choice = scs.nextInt();
                 check = true;
             } catch (Exception e) {
-                System.out.println(ANSI_RED+"Chỉ được nhập số!"+ANSI_RESET);
+                System.out.println(ANSI_RED+"Chỉ được nhập số !!!!!"+ANSI_RESET);
                 scs.nextLine();
             }
         }
