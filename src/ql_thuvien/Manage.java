@@ -5,5 +5,4 @@ public interface Manage<T> {
     int findById(int id);
     void delete(int id);
     void display();
-
 }

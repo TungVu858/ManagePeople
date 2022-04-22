@@ -16,7 +16,7 @@ public class Document {
     }
 
     public Document(int documentID, String productName, int releaseNumber) {
-        this.documentID = documentID++;
+        this.documentID = documentID;
         this.productName = productName;
         this.releaseNumber = releaseNumber;
     }

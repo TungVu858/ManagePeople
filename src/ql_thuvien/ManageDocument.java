@@ -42,35 +42,37 @@ public class ManageDocument implements Manage<Document> {
         boolean check = false;
         for (int i = 0; i < documentList.size(); i++) {
             if (documentList.get(i) instanceof Book) {
-                System.out.println("Các sách là : "+documentList.get(i));
+                System.out.println("Các sách là : " + documentList.get(i));
                 check = true;
             }
         }
-        if (!check){
+        if (!check) {
             System.out.println("Chưa có sách ");
         }
     }
+
     public void findByJouranl() {
         boolean check = false;
         for (int i = 0; i < documentList.size(); i++) {
             if (documentList.get(i) instanceof Journal) {
-                System.out.println("Các tạp trí là : "+documentList.get(i));
+                System.out.println("Các tạp trí là : " + documentList.get(i));
                 check = true;
             }
         }
-        if (!check){
+        if (!check) {
             System.out.println("Chưa có tạp trí ");
         }
     }
+
     public void findByNewpaper() {
         boolean check = false;
         for (int i = 0; i < documentList.size(); i++) {
             if (documentList.get(i) instanceof Newspaper) {
-                System.out.println("Các báo là : "+documentList.get(i));
+                System.out.println("Các báo là : " + documentList.get(i));
                 check = true;
             }
         }
-        if (!check){
+        if (!check) {
             System.out.println("Chưa có báo ");
         }
     }

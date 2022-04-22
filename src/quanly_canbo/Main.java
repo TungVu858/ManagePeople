@@ -22,13 +22,7 @@ public class Main {
             System.out.println("4.Hiển thị");
             System.out.println("0.Thoát");
             System.out.print("Nhập lựa chọn : ");
-            try {
-                choice = scs.nextInt();
-            } catch (Exception e) {
-                System.err.println("Chỉ được nhập số ");
-                scs.nextLine();
-                choice = -1;
-            }
+            choice = checkErr(scs);
             switch (choice) {
                 case 1:
                     int choice_1 = -1;
@@ -38,25 +32,19 @@ public class Main {
                         System.out.println("3.Thêm nhân viên : ");
                         System.out.println("0.Thoát");
                         System.out.println("Nhập lựa chọn : ");
-                        try {
-                            choice_1 = scs.nextInt();
-                        } catch (Exception e) {
-                            System.err.println("Chỉ được nhập số ");
-                            scs.nextLine();
-                            choice_1 = -1;
-                        }
+                        choice_1 = checkErr(scs);
                         switch (choice_1) {
                             case 1:
                                 System.out.println("Nhập tên : ");
                                 name = scc.nextLine();
                                 System.out.println("Nhập tuổi : ");
-                                age = scs.nextInt();
+                                age = checkErr(scs);
                                 System.out.println("Nhập giới tính : ");
                                 gender = scc.nextLine();
                                 System.out.println("Nhập địa chỉ : ");
                                 adress = scc.nextLine();
                                 System.out.println("Nhập vào cấp độ : ");
-                                level = scs.nextInt();
+                                level = checkErr(scs);
                                 quanLyCanBo.add(new CongNhan(name, age, gender, adress, level));
                                 System.out.println("Bạn đã thêm thành công : " + name);
                                 break;
@@ -64,7 +52,7 @@ public class Main {
                                 System.out.println("Nhập tên : ");
                                 name = scc.nextLine();
                                 System.out.println("Nhập tuổi : ");
-                                age = scs.nextInt();
+                                age = checkErr(scs);
                                 System.out.println("Nhập giới tính : ");
                                 gender = scc.nextLine();
                                 System.out.println("Nhập địa chỉ : ");
@@ -78,7 +66,7 @@ public class Main {
                                 System.out.println("Nhập tên : ");
                                 name = scc.nextLine();
                                 System.out.println("Nhập tuổi : ");
-                                age = scs.nextInt();
+                                age = checkErr(scs);
                                 System.out.println("Nhập giới tính : ");
                                 gender = scc.nextLine();
                                 System.out.println("Nhập địa chỉ : ");
@@ -104,7 +92,7 @@ public class Main {
                         System.out.println("Nhập tên mới : ");
                         name = scc.nextLine();
                         System.out.println("Nhập tuổi mới : ");
-                        age = scs.nextInt();
+                        age = checkErr(scs);
                         System.out.println("Nhập giới tính mới : ");
                         gender = scc.nextLine();
                         System.out.println("Nhập địa chỉ mới : ");
@@ -132,5 +120,17 @@ public class Main {
         System.out.println("Sau thay đổi ");
         quanLyCanBo.edit("đạt", new CanBo("hoàng", 23, "nam", "HN"));
         quanLyCanBo.displayAll();
+    }
+
+    private static int checkErr(Scanner scs) {
+        int choice_1;
+        try {
+            choice_1 = scs.nextInt();
+        } catch (Exception e) {
+            System.err.println("Chỉ được nhập số ");
+            scs.nextLine();
+            choice_1 = -1;
+        }
+        return choice_1;
     }
 }

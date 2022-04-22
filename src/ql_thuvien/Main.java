@@ -17,5 +17,6 @@ public class Main {
         manageDocument.display();
         manageDocument.findByBook();
         manageDocument.findByJouranl();
+        manageDocument.findByNewpaper();
     }
 }
